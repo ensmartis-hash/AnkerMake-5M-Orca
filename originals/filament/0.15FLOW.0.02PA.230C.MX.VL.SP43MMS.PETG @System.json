@@ -1,0 +1,51 @@
+{
+	"compatible_printers": [
+		"Anker M5 All-Metal 0.6 nozzle"
+	],
+	"enable_pressure_advance": [
+		"1"
+	],
+	"filament_extruder_variant": [
+		"Direct Drive Standard"
+	],
+	"filament_flow_ratio": [
+		"1.015"
+	],
+	"filament_max_volumetric_speed": [
+		"43"
+	],
+	"filament_settings_id": [
+		"0.15FLOW.0.02PA.230C.MX.VL.SP43MMS.PETG @System"
+	],
+	"filament_type": [
+		"PETG"
+	],
+	"filament_vendor": [
+		"noname"
+	],
+	"from": "User",
+	"hot_plate_temp": [
+		"65"
+	],
+	"hot_plate_temp_initial_layer": [
+		"70"
+	],
+	"inherits": "SUNLU PLA+ @System",
+	"name": "0.15FLOW.0.02PA.230C.MX.VL.SP43MMS.PETG @System",
+	"nozzle_temperature": [
+		"230"
+	],
+	"nozzle_temperature_initial_layer": [
+		"230"
+	],
+	"nozzle_temperature_range_high": [
+		"260"
+	],
+	"nozzle_temperature_range_low": [
+		"210"
+	],
+	"slow_down_layer_time": [
+		"1"
+	],
+	"version": "2.4.0.4"
+}

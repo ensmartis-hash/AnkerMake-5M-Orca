@@ -1,0 +1,30 @@
+{
+	"before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\nG92 E0\n;[layer_z]",
+	"from": "User",
+	"inherits": "Anker M5 All-Metal 0.6 nozzle",
+	"input_shaping_type": "ZV",
+	"machine_end_gcode": "M104 S0\nM140 S0\nM107\nG91\nG1 E-2 F300\nG90\nG1 Z{max_layer_z+10} F600\nG1 X5 Y220 F6000\nM84",
+	"machine_start_gcode": "; Grok-v1 Anker M5 0.8 all-metal\n; Skip firmware wipe + 3-point + center prime (M83 immediately before G28)\n; Home at 165C so the center Z-tap does not dump PETG on the plate\n; Purge on LEFT edge only — never in the center\nM4899 T3 ; v3 jerk + S-curve\nM220 S100\nM221 S100\nM107\nM140 S{first_layer_bed_temperature[0]}\nM104 S165\nM190 S{first_layer_bed_temperature[0]}\nM109 S165\nG90\nM83\nG1 E-1.5 F800\nG28\nG92 E0\nG1 Z10 F480\nM420 S1\nM420 Z10\nG1 X2 Y20 F6000\nM109 S{first_layer_temperature[0]}\nG1 Z0.40 F480\nG1 X2 Y210 Z0.40 F1200 E32\nG1 X3.2 Y210 F6000\nG1 X3.2 Y25 Z0.40 F1200 E36\nG92 E0\nG1 E-0.8 F1500\nG1 Z8 F480\nG1 X12 Y25 F6000\nG92 E0\n;LAYER_COUNT:{total_layer_count}",
+	"manual_filament_change": "0",
+	"max_layer_height": [
+		"0.64"
+	],
+	"min_layer_height": [
+		"0.16"
+	],
+	"name": "Grok-v1-Anker-M5",
+	"nozzle_diameter": [
+		"0.8"
+	],
+	"print_host": "localhost:4470",
+	"printer_extruder_id": [
+		"1"
+	],
+	"printer_extruder_variant": [
+		"Direct Drive Standard"
+	],
+	"printer_settings_id": "Grok-v1-Anker-M5",
+	"purge_in_prime_tower": "0",
+	"single_extruder_multi_material": "0",
+	"version": "2.4.0.1"
+}

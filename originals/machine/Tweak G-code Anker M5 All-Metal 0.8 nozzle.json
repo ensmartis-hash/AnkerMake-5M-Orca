@@ -1,0 +1,30 @@
+{
+	"before_layer_change_gcode": ";BEFORE_LAYER_CHANGE\nG92 E0\n;[layer_z]",
+	"from": "User",
+	"inherits": "Anker M5 All-Metal 0.6 nozzle",
+	"input_shaping_type": "ZV",
+	"machine_end_gcode": "M104 S0\nM140 S0\nM107\nG91\nG1 E-2 F300 ; short retract\nG90\nG1 Z{max_layer_z+10} F600 ; lift above the part if placeholder works\nG28 X0 Y0 ; home X/Y only\nM84 ; disable steppers (same role as M18)",
+	"machine_start_gcode": "; AnkerMake M5 — Option B (skip host wipe + 3-point)\nM4899 T3 ; v3 jerk + S-curve\nM220 S100\nM221 S100\nM107\nM104 S{first_layer_temperature[0]-30}\nM190 S{first_layer_bed_temperature[0]}\nM109 S{first_layer_temperature[0]}\nG90\nM83 ; relative E — also bypasses Anker host start sequence\nG1 E-15 F900\nG28\nG92 E0\nM420 S1\nM420 Z15\nG1 Z8 F600\nG1 X-2 Y5 F6000\nG1 Z0.3 F600\nG1 X-2 Y200 Z0.3 F1500 E25\nG1 X-1 Y200 F6000\nG1 X-1 Y20 Z0.3 F1500 E50\nG92 E0\nG1 E-1 F1800\nG1 Z8 F600\nG1 X5 Y20 F6000\nG92 E0\n;LAYER_COUNT:{total_layer_count}",
+	"manual_filament_change": "0",
+	"max_layer_height": [
+		"0.64"
+	],
+	"min_layer_height": [
+		"0.18"
+	],
+	"name": "Tweak G-code Anker M5 All-Metal 0.8 nozzle",
+	"nozzle_diameter": [
+		"0.8"
+	],
+	"print_host": "localhost:4470",
+	"printer_extruder_id": [
+		"1"
+	],
+	"printer_extruder_variant": [
+		"Direct Drive Standard"
+	],
+	"printer_settings_id": "Tweak G-code Anker M5 All-Metal 0.8 nozzle",
+	"purge_in_prime_tower": "0",
+	"single_extruder_multi_material": "0",
+	"version": "2.4.0.1"
+}
